@@ -21,8 +21,12 @@ connection.connect(function (err) {
 function start() {
   connection.query("SELECT * FROM products", function(err, res) {
     if (err) throw err;
+    console.log("-----------------------------------");
     console.log("Welcome to Bamazon! Here is a list of our current products:");
-    console.log(res);
-    connection.end();
+    console.log("-----------------------------------");
+    for (var i = 0; i < res.length; i++) {
+      console.log(res[i].id + " | " + res[i].product_name + " | " + res[i].department_name + " | " + "$" + res[i].price + " | " + "Qty. " + res[i].stock_quantity);
+    };
+    console.log("-----------------------------------");
   });
 }
