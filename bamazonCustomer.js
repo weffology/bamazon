@@ -83,7 +83,7 @@ function chooseItem() {
             }
           );
         } else {
-          console.log("Sorry, we're currently sold out.");
+          console.log("Sorry, we're currently sold out. Please select another item from the list below.");
           start();
         }
       })
